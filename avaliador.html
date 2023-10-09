@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .emoji-range {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .emoji-display {
+            margin-top: 10px;
+            font-size: 3em;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="emoji-range">
+        <input type="range" id="emojiSlider" min="0" max="10" step="1" value="5">
+        <div class="emoji-display"></div>
+    </div>
+
+
+    <script>
+        const emojiSlider = document.getElementById('emojiSlider');
+        const emojiDisplay = document.querySelector('.emoji-display');
+
+        emojiSlider.addEventListener('input', updateEmoji);
+
+        function updateEmoji() {
+            const value = emojiSlider.value;
+            let emoji = ''; // Emote triste padrão
+
+            const emotes = {
+                0: '😢​',
+                1: '😢​',
+                2: '☹️​',
+                3: '​🙁​​',
+                4: '​🙁​​',
+                5: '😐​',
+                6: '🙂​',
+                7: '😊​​',
+                8: '😃',
+                9: '🤩​',
+                10: '🤩​'
+            }
+
+
+            emojiDisplay.textContent = emotes[value];
+        }
+
+            updateEmoji();
+
+    </script>
+</body>
+</html>
